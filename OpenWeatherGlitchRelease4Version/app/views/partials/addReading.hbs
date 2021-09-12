@@ -1,0 +1,42 @@
+
+  <form class="ui segment form" action="/station/{{station.id}}/addReading"  method="POST">
+  <div class="three fields">
+        <div class="field">
+            <label>Code</label>
+            <select class="ui dropdown" name="code">
+                <option value="100">100</option>
+                <option value="200">200</option>
+                <option value="300">300</option>
+                <option value="400">400</option>
+                <option value="500">500</option>
+                <option value="600">600</option>
+                <option value="700">700</option>
+                <option value="800">800</option>
+            </select>
+        </div>
+    <div class="field">
+      <label>Temperature</label>
+      <input placeholder="00.0C" type="text" name="temperature">
+    </div>
+    <div class="field">
+      <label>Wind Speed</label>
+      <input placeholder="00.00kMh" type="number" name="windSpeed">
+    </div>
+  </div>
+  <div class="three fields">
+    <div class="field">
+      <label>Wind Direction</label>
+      <input placeholder="000deg" type="text" name="windDirection">
+    </div>
+    <div class="field">
+      <label>Pressure</label>
+      <input placeholder="000hPa" type="number" name="pressure">
+    </div>
+  </div>
+  <button class="ui blue submit button"> Submit Report </button>
+</form>
+
+
+
+
+  

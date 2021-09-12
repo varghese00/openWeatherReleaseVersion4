@@ -1,0 +1,24 @@
+{{> menu id="dashboard"}}
+
+  <section class="ui segment">
+    {{>listStations}}
+    {{>addStation}}    
+
+    {{error}}
+
+<!--     Leaflet Graph of checkins : Reference from coding train
+     -->
+    <div id="checkin_location"></div>
+      <script>
+        const geolocation = L.map('checkin_location').setView([0, 0], 1);
+        const attribution='&copy; <a href="https:www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
+        const tileUrl='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+        const tiles=L.tileLayer(tileUrl,{attribution});
+        tiles.addTo(geolocation);
+        {{#each stations}}
+              L.marker([ {{latitude}} , {{longitude}}]).addTo(geolocation);
+        {{/each}}
+      </script>
+    
+  </section>
+

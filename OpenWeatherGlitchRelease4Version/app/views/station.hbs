@@ -1,0 +1,50 @@
+{{> menu}}
+
+<section class="ui center aligned middle aligned segment">
+  <h2 class="ui header">
+{{station.name}}  
+</h2>
+  {{>listReadings}}
+  {{> addReading}}
+  
+<!--   hbs javascript for the graph trends -->
+  <div class="ui segment" id="chart"></div>
+  <script type='text/javascript'>
+    
+    const data = {
+           labels: [{{#each reading.trendLabels}} "{{this}}",{{/each}}],
+        datasets: [{name: "Temperature", type: "line", values: [ {{#each reading.tempTrend}} {{this}}, {{/each}}]},
+            {
+                name: "Pressure", type: "line",
+                values: [{{#each reading.pressureTrend}}{{this}},{{/each}}]
+            },
+            {
+                name: "WindSpeed", type: "line",
+                values: [{{#each reading.windSpeedTrend}}{{this}},{{/each}}]
+            },
+                  ]
+    }
+
+    const chart = new frappe.Chart("#chart", {  
+
+        title: "Trends",
+        data: data,
+        type: 'axis-mixed', 
+        height: 250,
+        colors: [ '#743ee2','#7cd6fd', '#F26A4B']
+    })
+  
+</script>
+</section>
+<form class="ui stacked segment form" action="/station/{{station.id}}/addreport" method="POST">
+  <div class="two fields">
+    <div class="field">
+      <label>Latitude</label> <input value="{{station.latitude}}" type="text" name="lat">
+    </div>
+    <div class="field">
+      <label>Longitude</label> <input value="{{station.longitude}}" type="text" name="lng">
+    </div>
+  </div>
+  <button class="ui large orange submit button">Autogenerate Reading</button>
+</form>
+

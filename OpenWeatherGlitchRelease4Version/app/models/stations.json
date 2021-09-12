@@ -1,0 +1,65 @@
+{
+  "stationCollection": [
+    {
+      "id": "1ac93d30-13e4-11ec-a487-398d131e526a",
+      "userid": "def30d90-10d2-11ec-b2b6-af9a5935a1df",
+      "name": "Cork",
+      "latitude": "51",
+      "longitude": "8",
+      "readings": [
+        {
+          "code": 803,
+          "temperature": 18.91,
+          "windSpeed": 2.33,
+          "pressure": 1017,
+          "windDirection": 284,
+          "windChill": 18.32,
+          "weatherIcon": "Clouds",
+          "tempTrend": [
+            17.6,
+            20.79,
+            22.46,
+            15.52,
+            13.42,
+            16.14,
+            16.42,
+            15.73
+          ],
+          "pressureTrend": [
+            1018,
+            1018,
+            1014,
+            1016,
+            1017,
+            1018,
+            1019,
+            1020
+          ],
+          "windSpeedTrend": [
+            2.96,
+            1.3,
+            3.69,
+            3.03,
+            2.62,
+            1.42,
+            1.99,
+            1
+          ],
+          "trendLabels": [
+            "12/8/2021",
+            "13/8/2021",
+            "14/8/2021",
+            "15/8/2021",
+            "16/8/2021",
+            "17/8/2021",
+            "18/8/2021",
+            "19/8/2021"
+          ],
+          "id": "1eb91500-13e4-11ec-a487-398d131e526a",
+          "time": "Sunday, September 12, 2021 4:11 PM"
+        }
+      ],
+      "lastStationReading": null
+    }
+  ]
+}
